@@ -20,7 +20,6 @@ app.get('/',function(req,res,next){
       return;
     }
     context.results = JSON.stringify(rows);
-    context.type('text/plain');
     res.render('home', context);
   });
 });
