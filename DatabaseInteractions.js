@@ -26,7 +26,7 @@ app.set('port', 3000);
 //This is the server side code
 //********************************************************************************************************
 //selecting data
-app.get('/',function(req,res,next){
+app.get('/select',function(req,res,next){
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
@@ -52,7 +52,7 @@ app.get('/insert',function(req,res,next){
 });
 
 //Update data in the database
-app.get('/safe-update',function(req,res,next){
+app.get('/update',function(req,res,next){
   var context = {};
   mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.query.id], function(err, result){
     if(err){
