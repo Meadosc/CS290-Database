@@ -58,6 +58,30 @@ app.get('/safe-update',function(req,res,next){
   });
 });
 
+//Delete data in the database
+app.get('/delete',function(req,res,next){
+  var context = {};
+  mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.query.id], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+    if(result.length == 1){
+      var curVals = result[0];
+      mysql.pool.query("DELETE * FROM workouts WHERE id=? ",
+        [req.query.id],
+        function(err, result){
+        if(err){
+          next(err);
+          return;
+        }
+        context.results = "Deleted " + result.changedRows + " rows.";
+        res.render('home',context);
+      });
+    }
+  });
+});
+
 //Reset and create the database
 app.get('/reset-table',function(req,res,next){
   var context = {};
