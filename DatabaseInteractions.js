@@ -11,9 +11,6 @@ app.set('port', 3000);
 //selecting data
 app.get('/',function(req,res,next){
   var context = {};
-  //*********************
-  //res.type('text/plain');
-  //*********************
   mysql.pool.query('SELECT * FROM todo', function(err, rows, fields){
     if(err){
       next(err);
