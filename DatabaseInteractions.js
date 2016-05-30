@@ -12,7 +12,7 @@ app.set('port', 3000);
 app.get('/',function(req,res,next){
   var context = {};
   //*********************
-  res.type('text/plain');
+  //res.type('text/plain');
   //*********************
   mysql.pool.query('SELECT * FROM todo', function(err, rows, fields){
     if(err){
@@ -20,6 +20,7 @@ app.get('/',function(req,res,next){
       return;
     }
     context.results = JSON.stringify(rows);
+    context.type('text/plain');
     res.render('home', context);
   });
 });
