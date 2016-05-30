@@ -68,7 +68,7 @@ app.get('/delete',function(req,res,next){
     }
     if(result.length == 1){
       var curVals = result[0];
-      mysql.pool.query("DELETE * FROM workouts WHERE id=? ",
+      mysql.pool.query("DELETE FROM workouts WHERE id=? ",
         [req.query.id],
         function(err, result){
         if(err){
