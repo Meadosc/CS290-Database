@@ -35,7 +35,7 @@ app.get('/', function(req,res,next){
 		}
 		console.log(JSON.parse(request.responseText)); //For debugging and testing
 	});
-	request.send(JSON.stringify(payload)); //Send the content
+	request.send(null); //Send the content
   //end AJAX call code
 });
 //********************************************************************************************************
