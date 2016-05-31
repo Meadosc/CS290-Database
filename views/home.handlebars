@@ -1,17 +1,15 @@
-<h2>You have {{toDoCount}} items on your to do list.</h2>
+<h1>This is the list of completed workouts.</h1>
 <form method="post">
   <input type="text" name="name" id="toDoName">Task <br>
-  <input type="text" name="city" id="toDoCity">City <br>
-  <input type="text" name="temp" id="toDoTemp">Minimum Temperature <br>
   <input type="submit" name="Add Item" value="Add Item">
 </form>
+
 {{#if toDo}}
 <ul>
   {{#each toDo}}
   <li>
     <h3>Task: {{this.name}}</h3>
     <h3>City: {{this.city}}</h3>
-    <h3>Minimum Temperature: {{this.temp}}</h3>
     <form method="post">
       <input type="hidden" name="id" value="{{this.id}}">
       <input type="submit" name="Done" value="Mark as Done">
