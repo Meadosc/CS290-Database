@@ -15,34 +15,6 @@ app.set('port', 3000);
 //********************************************************************************************************
 
 //********************************************************************************************************
-//This is the client side code
-//********************************************************************************************************
-app.get('/', function(req,res,next){
-  var context = {};
-  
-  //begin AJAX call code
-  var request = new XMLHttpRequest();
-	request.open('POST', "http://localhost:3000/select", true);
-	request.setRequestHeader('Content-Type', 'application/json');
-	request.addEventListener('load',function(){
-		if(request.status >= 200 && request.status < 400){
-			var response = JSON.parse(request.responseText); // This gives us the response as a variable
-			context.id = response.id; //Report stuff
-			context.name = response.name; //Report stuff
-			res.render('home',context); //This is where the page is rendered.
-		} else {
-			console.log("Error in network request: " + request.statusText);
-		}
-		console.log(JSON.parse(request.responseText)); //For debugging and testing
-	});
-	request.send(null); //Send the content
-  //end AJAX call code
-});
-//********************************************************************************************************
-//End of client side code
-//********************************************************************************************************
-
-//********************************************************************************************************
 //This is the server side code
 //********************************************************************************************************
 //selecting data
