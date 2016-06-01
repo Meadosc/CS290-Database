@@ -7,7 +7,7 @@ function callSelect(){
 	req.addEventListener('load',function(){
 		console.log("Just before the assignment of the JSON response"); //testing
 		console.log("req: " + req); //testing
-		console.log("req.responseText: " + req.responseText); //testing
+		console.log("req.rows: " + req.rows); //testing
 		
 		var response = JSON.parse(req.responseText); // This gives us the response as a variable
 		
