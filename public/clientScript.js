@@ -29,5 +29,4 @@ function createTable(data){
 		}
 		table.appendChild(row);
 	}
-//$('#table-wrap').append(table);
 };
