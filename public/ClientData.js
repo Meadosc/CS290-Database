@@ -1,24 +1,56 @@
-document.addEventListener('DOMContentLoaded', bindButtons);
+// Variables to adjust table size
+var numRows = 3; //Not including header row
+var numCols = 4;
 
-function bindButtons(){
-	//Listener for the stuff submit
-	document.getElementById('submitStuff').addEventListener('click', function(event){
-		var req = new XMLHttpRequest();
-		var payload = {stuff:null}; //This is what the API will receive
-		payload.stuff = document.getElementById('textStuff').value;
-		req.open('POST', "http://httpbin.org/post?" + payload.stuff, true);
-		req.setRequestHeader('Content-Type', 'application/json');
-		req.addEventListener('load',function(){
-			if(req.status >= 200 && req.status < 400){
-				var response = JSON.parse(req.responseText); // This gives us the response as a variable
-				document.getElementById('StuffReceived').textContent = response.data; //Report stuff
-			} else {
-				console.log("Error in network request: " + request.statusText);
-			}
-			console.log(JSON.parse(req.responseText)); //For debugging and testing
-		});
-		req.send(JSON.stringify(payload)); //Send the content
-				
-		event.preventDefault(); //Stops form from refreshing page
-	})
-};
+//Create the table
+var table = document.createElement('table');
+document.body.appendChild(table);
+
+//Create the table header
+var addElement = document.getElementsByTagName('table');
+var newTH = document.createElement('thead');
+addElement[0].appendChild(newTH); //Add thead element to table element
+
+addElement = document.getElementsByTagName('thead'); // Reassign addElement to thead element
+var newTR = document.createElement('tr');
+addElement[0].appendChild(newTR); //Add tr element to table element
+
+//Create 4 header elements
+for (var i = 0; i < numCols; i++){
+	addElement = document.getElementsByTagName('tr');
+	var tempTH = document.createElement('th');
+	var newThText = document.createTextNode('Header ' + (i + 1) );
+	tempTH.appendChild(newThText);
+	addElement[0].appendChild(tempTH);
+}
+
+// Create Table Body
+var position = document.getElementsByTagName('table');
+var newTbody = document.createElement('tbody');
+position[0].appendChild(newTbody);
+
+// Create 3 body rows of 4 columns each to append to the table
+var xVal = 1; // Column number
+var yVal = 1; // Row number
+var index = 1; // Element number
+
+for (var i = 0; i < numRows; i++) {
+  // Create a new Row
+  position = document.getElementsByTagName('tbody');
+  var newTr = document.createElement('tr');
+  position[0].appendChild(newTr);
+
+    for (var j = 0; j < numCols; j++) {
+      // Append elements to the Row
+      position = document.getElementsByTagName('tr');
+      var newTd = document.createElement('td');
+      newTd.setAttribute('id', index);
+      var newTdText = document.createTextNode(xVal + ' , ' + yVal);
+      newTd.appendChild(newTdText);
+      position[i+1].appendChild(newTd);
+      xVal++;
+      index++;
+    }
+  xVal = 1;
+  yVal++;
+}
