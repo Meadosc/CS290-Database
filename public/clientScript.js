@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', callSelect);
 
 function callSelect(){
+	console.log("it makes it inside the function"); //testing
 	var req = new XMLHttpRequest();
 	req.open('POST', "http://localhost:3000/select", true);
 	req.setRequestHeader('Content-Type', 'application/json');
