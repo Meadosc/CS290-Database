@@ -7,7 +7,7 @@ function callSelect(){
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function(){
 		console.log("it makes it inside the AJAX 'load' event listener"); //testing
-		if(req.status >= 200 && req.status < 400){
+		/*if(req.status >= 200 && req.status < 400){*/
 			console.log("Just before the assignment of the JSON response"); //testing
 			console.log("req.responseText: " + req.responseText); //testing
 			
@@ -15,9 +15,9 @@ function callSelect(){
 			
 			console.log("Just after the assignment of the JSON response"); //testing
 			console.log(response); //testing to see if I get the JSON back. duplicat below
-		} else {
+		/*} else {
 			console.log("Error in network request: " + req.statusText);
-		}
+		}*/
 	});
 	req.send(JSON.stringify()); //Send the content
 			
