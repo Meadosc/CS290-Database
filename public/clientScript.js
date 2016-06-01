@@ -13,7 +13,7 @@ function callSelect(){
 			console.log("Just after the assignment of the JSON response"); //testing
 			console.log(response); //testing to see if I get the JSON back. duplicat below
 		} else {
-			console.log("Error in network request: " + request.statusText);
+			console.log("Error in network request: " + req.statusText);
 		}
 		console.log(JSON.parse(req.responseText)); //For debugging and testing
 	});
