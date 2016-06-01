@@ -33,7 +33,7 @@ app.get('/select',function(req,res,next){
     res.send(JSON.stringify(rows));
   });
 });
-console.log("too far, oustide select");
+
 //Insert data into the database
 app.get('/insert',function(req,res,next){
   var context = {};
