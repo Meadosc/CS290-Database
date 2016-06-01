@@ -30,7 +30,7 @@ app.get('/select',function(req,res,next){
       next(err);
       return;
     }
-    res.send(JSON.stringify(rows));
+    res.send(JSON.stringify(fields));
   });
 });
 
