@@ -10,6 +10,7 @@ var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
+'app.use(express.static('public')); // This has the app use the static folder 'public'
 //********************************************************************************************************
 //End of set up
 //********************************************************************************************************
