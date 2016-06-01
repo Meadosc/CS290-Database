@@ -1,3 +1,4 @@
+/*
 document.addEventListener('DOMContentLoaded', bindButtons);
 
 function bindButtons(){
@@ -22,3 +23,4 @@ function bindButtons(){
 		event.preventDefault(); //Stops form from refreshing page
 	})
 };
+*/
