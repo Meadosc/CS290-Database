@@ -4,17 +4,17 @@
   <input type="submit" name="Add Item" value="Add Item">
 </form>
 
-{{#if toDo}}
-<ul>
-  {{#each toDo}}
-  <li>
-    <h3>Task: {{this.name}}</h3>
-    <h3>City: {{this.city}}</h3>
-    <form method="post">
-      <input type="hidden" name="id" value="{{this.id}}">
-      <input type="submit" name="Done" value="Mark as Done">
-    </form>
-  </li>
-  {{/each}}
-</ul>
-{{/if}}
+<form>
+		<fieldset>
+			<legend>Send stuff to HttpBinPost.org/post</legend>
+			<label for = "ZIP">stuff</label>
+			<input type="text" name="stuff" id="textStuff">
+			<input type="submit" id="submitStuff">
+		</fieldset>	
+</form>
+		
+	<div>
+		<h2>The Stuff they sent back</h2>
+	   <span>Stuff: </span><span id="StuffReceived"></span></br>
+	</div>
+	
