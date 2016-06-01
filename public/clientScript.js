@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', callSelect);
 
 function callSelect(){
 	var req = new XMLHttpRequest();
-	req.open('POST', "http://localhost:3000/select" + payload.stuff, true);
+	req.open('POST', "http://localhost:3000/select", true);
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function(){
 		if(req.status >= 200 && req.status < 400){
