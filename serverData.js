@@ -17,6 +17,12 @@ app.set('port', 3000);
 //********************************************************************************************************
 //This is the server side code
 //********************************************************************************************************
+app.get('/',function(req,res,next){
+  var context = {};
+  res.render(home, context);
+  });
+});
+
 //selecting data
 app.get('/select',function(req,res,next){
   var context = {};
