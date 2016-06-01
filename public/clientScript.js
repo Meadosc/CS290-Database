@@ -21,7 +21,6 @@ function createTable(data){
     for(var i in data){
         var row = document.createElement("tr");        
         for(var j in data[i]){
-        console.log("building table " + j);
             var col = document.createElement("td");
             col.textContent = data[i][j];
             row.appendChild(col);
