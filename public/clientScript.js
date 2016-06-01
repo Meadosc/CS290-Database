@@ -18,7 +18,7 @@ function callSelect(){
 function createTable(data){
    
 	var table = document.createElement("table");//Create table in HTML
-	document.body.appendChild(table); Add the table as a child of the body in HTML
+	document.body.appendChild(table); //Add the table as a child of the body in HTML
 	
 	for(var i in data){
 		var row = document.createElement("tr");        
