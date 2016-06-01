@@ -25,7 +25,6 @@ app.get('/',function(req,res,next){
 
 //selecting data
 app.get('/select',function(req,res,next){
-  var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
       next(err);
