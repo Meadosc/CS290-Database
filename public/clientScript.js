@@ -15,5 +15,5 @@ function callSelect(){
 	});
 	req.send(JSON.stringify()); //Send the content
 			
-	event.preventDefault(); //Stops form from refreshing page
+	// I'm not clicking anything. event.preventDefault(); //Stops form from refreshing page
 };
