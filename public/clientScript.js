@@ -9,6 +9,7 @@ function callSelect(){
 		console.log("it makes it inside the AJAX 'load' event listener"); //testing
 		if(req.status >= 200 && req.status < 400){
 			console.log("Just before the assignment of the JSON response"); //testing
+			console.log("req.responseText: " + req.responseText); //testing
 			var response = JSON.parse(req.responseText); // This gives us the response as a variable
 			console.log("Just after the assignment of the JSON response"); //testing
 			console.log(response); //testing to see if I get the JSON back. duplicat below
