@@ -10,13 +10,14 @@ function callSelect(){
 		if(req.status >= 200 && req.status < 400){
 			console.log("Just before the assignment of the JSON response"); //testing
 			console.log("req.responseText: " + req.responseText); //testing
+			
 			var response = JSON.parse(req.responseText); // This gives us the response as a variable
+			
 			console.log("Just after the assignment of the JSON response"); //testing
 			console.log(response); //testing to see if I get the JSON back. duplicat below
 		} else {
 			console.log("Error in network request: " + req.statusText);
 		}
-		console.log(JSON.parse(req.responseText)); //For debugging and testing
 	});
 	req.send(JSON.stringify()); //Send the content
 			
