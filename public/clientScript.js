@@ -13,12 +13,9 @@ function bindInsertButton(){
 		payload.reps = document.getElementById('reps').value;
 		payload.weight = document.getElementById('weight').value;
 		payload.date = document.getElementById('date').value;
-		var radio[] = document.getElementsByName('units').value;
+		payload.radio= document.getElementsByName('units').value;
 		
-		console.log("radio: " + radio[0]);
-		
-		if(radio[0].checked) {payload.units = "1"}
-        	else {payload.units = "0"}
+		console.log("radio: " + radio);
 		
 		var req = new XMLHttpRequest();
 		
