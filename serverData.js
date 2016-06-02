@@ -34,18 +34,6 @@ app.get('/select',function(req,res,next){
   });
 });
 
-//Trying a post
-app.post('/insert',function(req, res, next){
-    mysql.pool.query("INSERT INTO exercises (`name`, `weight`, `reps`, `date`, `units`) VALUES(? ? ? ? ?)", [req.body.name, req.body.weight, req.body.reps, req.body.date, req.body.units], function(err, rows, fields){
-    if(err){
-      next(err);
-      return;
-    }
-    context.results = JSON.stringify(rows);
-    res.render('home', context);
-  });
-});
-
 
 //Insert data into the database
 app.get('/insert',function(req,res,next){
@@ -54,6 +42,9 @@ app.get('/insert',function(req,res,next){
       next(err);
       return;
     }
+    res.send(JSON.stringify(rows));
+    context.results = JSON.stringify(rows);
+    res.render('home', context);
   });
 });
 
