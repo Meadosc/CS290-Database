@@ -9,13 +9,13 @@ function bindInsertButton(){
 	payload.reps = document.getElementById('reps').value;
 	payload.weight = document.getElementById('weight').value;
 	payload.date = document.getElementById('date').value;
-	payload.lbs = document.getElementsByName('units').value;
+	payload.units = document.getElementsByName('units').value;
 	//Listener for the insert button
 	document.getElementById('insertSubmit').addEventListener('click', function(event){
 	var req = new XMLHttpRequest();
 	
 	//Add in 
-	req.open('GET', "http://52.36.135.10:3000/insert"  , true); //add in payload data****************************
+	req.open('GET', "http://52.36.135.10:3000/insert?" + "name=" + payload.name || null + "&reps=" + payload.reps || null + "&weight=" + payload.weight || null + "&date=" payload.date || null + "&lbs=" + payload.units || null , true);
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function(){
 		var response = JSON.parse(req.responseText); // This gives us the response as a variable
