@@ -20,13 +20,24 @@ function createTable(data){
 	var table = document.createElement("table");//Create table in HTML
 	document.body.appendChild(table); //Add the table as a child of the body in HTML
 	
+	/*
 	//Add in table headers
 	var row = document.createElement("tr");  
 	table.appendChild(row); //Create a new row
 	var col = document.createElement("th");
 	col.textContent = "id"; //add ID header
 	row.appendChild(col);
+	*/
 	
+	//Create table headers
+	var headers[] = ["id","name","reps","weight","date","lbs"];
+	for(var j in headers){
+		var col = document.createElement("th");
+		col.textContent = headers[j];
+		row.appendChild(col);
+};
+
+	//Create table body
 	for(var i in data){
 		var row = document.createElement("tr");        
 		for(var j in data[i]){
