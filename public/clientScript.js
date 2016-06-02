@@ -9,24 +9,32 @@ function bindInsertButton(){
 	
 		console.log("bindInsertButton is called with click event"); // debug
 		
-		var payload = {}; //payload is the object I will use to send data to the insert page via get request
-		payload.name = document.getElementById('name').value;
-		payload.reps = document.getElementById('reps').value;
-		payload.weight = document.getElementById('weight').value;
-		payload.date = document.getElementById('date').value;
+		var payload = []; //payload is the array object I will use to send data to the insert page via get request
+		payload[0] = document.getElementById('name').value;
+		payload[1] = document.getElementById('reps').value;
+		payload[2] = document.getElementById('weight').value;
+		payload[3] = document.getElementById('date').value;
 		var radio = document.getElementsByName("units");
-	        if(radio[0].checked) payload.units = "1";
-	        else payload.units = "0";
+	        if(radio[0].checked) payload[4] = "1";
+	        else payload[4] = "0";
 
 		//make request to insert page 
 		var req = new XMLHttpRequest();
-		var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
+		var requestString= "name=" + payload[0] + "&reps=" + payload[1] + "&weight=" + payload[2] + "&date=" + payload[3] + "&lbs=" + payload[4];
 		console.log("Request String: " + requestString); //debug
 		
 		req.open('GET', "http://52.36.135.10:3000/insert?" + requestString , true);
 		//req.setRequestHeader('Content-Type', 'application/json');
 		req.addEventListener('load',function(){
-			var response = JSON.parse(req.responseText); // This gives us the response as a variable
+			//add a row to the table with new info
+			var table = document.getElementById('table'); //put the table element in a variable
+			var row = document.createElement("tr"); 
+			table.appendChild(row); //Create a new row
+			//using payload array to populate new row
+			for(var j in payload){
+				var col = document.createElement("th");
+				col.textContent = payload[j];
+				row.appendChild(col);
 		});
 		req.send(); //Send the content
 		event.preventDefault(); //Stop page from refreshing
