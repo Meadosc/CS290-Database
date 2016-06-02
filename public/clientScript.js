@@ -27,12 +27,7 @@ function bindInsertButton(){
 		//console.log("Request String: " + requestString); //debug
 		
 		req.open('GET', "http://52.36.135.10:3000/insert?" + requestString , true);
-		//req.setRequestHeader('Content-Type', 'application/json');
 		req.addEventListener('load',function(){
-			//var response = JSON.parse(req.responseText); // This gives us the response as a variable
-			//console.log("req.responseText: " + req.responseText); //testing
-			//console.log("The var response: " + response); //testing
-			/*
 			//add a row to the table with new info
 			var table = document.getElementById('table'); //put the table element in a variable
 			var row = document.createElement("tr"); 
@@ -44,7 +39,6 @@ function bindInsertButton(){
 				row.appendChild(col);
 				
 			};
-			*/
 		});
 		req.send(); //Send the content
 		event.preventDefault(); //Stop page from refreshing
