@@ -13,7 +13,7 @@ function bindInsertButton(){
 	
 	
 	//Listener for the insert button
-	document.getElementById('insertSubmit').addEventListener('click', function(event){
+	document.getElementById('insertSubmit').addEventListener("click", function(event){
 	
 		console.log("bindInsertButton is called with click event"); // debug
 		
@@ -31,13 +31,14 @@ function bindInsertButton(){
 		//make request to insert page 
 		var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
 		console.log("Request String: " + requestString); //debug
+		
 		req.open('GET', "http://52.36.135.10:3000/insert?" + requestString , true);
 		//req.setRequestHeader('Content-Type', 'application/json');
 		req.addEventListener('load',function(){
 			var response = JSON.parse(req.responseText); // This gives us the response as a variable
 			createTable(response); //Creates the table
 		});
-	req.send(); //Send the content
+		req.send(); //Send the content
 	});
 };
 
