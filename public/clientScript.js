@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', callSelect);//Renders page and calls to select page.
 document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the input button
-/*
+
 function bindInsertButton(){
     document.getElementById("insertSubmit").addEventListener("click", function(event){
 	console.log("bindInsertButton is called with click event"); // debug
@@ -12,8 +12,8 @@ function bindInsertButton(){
 	payload.date = document.getElementById('date').value;
 	var radio = document.getElementsByName('units').value;
 	
-	if(radio[0].checked) {payload.units = "1"};
-	else {payload.units = "0"};
+	if(radio[0].checked) {payload.units = "1"}
+	else {payload.units = "0"}
     	
     	var requestString = "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" payload.date + "&lbs=" + payload.units;
     	
