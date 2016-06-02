@@ -79,9 +79,9 @@ function createTable(data){
 		var btn = document.createElement("BUTTON");
 		var t = document.createTextNode("Delete");
 		btn.appendChild(t);
-		btn.id = data[i][1];
+		btn.id = data[i][0];
 		
-/*debug*/	console.log("data data[i][1]: " + data[i][1]);
+/*debug*/	console.log("data data[i][0]: " + data[i][1]);
 /*debug*/	console.log("button id: " + btn.id);
 		
 		btn.onclick = function(){deleteButton()};  //Reference deleteButton function to delete a row
