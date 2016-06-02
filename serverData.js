@@ -42,10 +42,10 @@ app.get('/insert',function(req,res,next){
       next(err);
       return;
     }
-    /*
+    
     context.results = "Inserted id " + result.insertId;
     res.render('home',context);
-    */
+    
   });
 });
 
