@@ -9,7 +9,7 @@ function bindInsertButton(){
 	payload.reps = document.getElementById('reps').value;
 	payload.weight = document.getElementById('weight').value;
 	payload.date = document.getElementById('date').value;
-	payload.lbs = document.getElementByName('units').value;
+	payload.lbs = document.getElementsByName('units').value;
 	//Listener for the insert button
 	document.getElementById('insertSubmit').addEventListener('click', function(event){
 	var req = new XMLHttpRequest();
