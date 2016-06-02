@@ -35,6 +35,7 @@ function bindInsertButton(){
 				var col = document.createElement("th");
 				col.textContent = payload[j];
 				row.appendChild(col);
+			}:
 		});
 		req.send(); //Send the content
 		event.preventDefault(); //Stop page from refreshing
