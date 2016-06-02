@@ -32,7 +32,7 @@ function bindInsertButton(){
 			var table = document.getElementsByTagName("table"); //put the table element in a variable
 	/*debug*/	console.log("Table from insert: " + table);
 			var row = document.createElement("tr"); 
-			table.appendChild(row); //Create a new row
+			table[0].appendChild(row); //Create a new row
 			//using payload array to populate new row
 			for(var j in payload){
 				var col = document.createElement("th");
