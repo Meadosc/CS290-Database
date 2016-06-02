@@ -15,6 +15,8 @@ function bindInsertButton(){
 		payload.date = document.getElementById('date').value;
 		var radio = document.getElementsByName('units').value;
 		
+		console.log("radio: " + radio);
+		
 		if(radio[0].checked) {payload.units = "1"}
         	else {payload.units = "0"}
 		
