@@ -74,11 +74,13 @@ function createTable(data){
 			row.appendChild(col);
 		}
 		table.appendChild(row);
+		
 		//Add delete button
 		var btn = document.createElement("BUTTON");
 		var t = document.createTextNode("Delete");
 		btn.appendChild(t);
-		table.appendChild(btn);
+		//btn.onclick = (function(entry) {return function() {chooseUser(entry);}})(entry);
+		td.appendChild(btn);
 	}
 };
 
