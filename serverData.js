@@ -46,7 +46,7 @@ app.post('/insert',function(req, res, next){
   });
 });
 
-/*
+
 //Insert data into the database
 app.get('/insert',function(req,res,next){
   var context = {};
@@ -61,7 +61,7 @@ app.get('/insert',function(req,res,next){
     
   });
 });
-*/
+
 
 //Update data in the database
 app.get('/update',function(req,res,next){
