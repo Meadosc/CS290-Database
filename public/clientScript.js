@@ -15,7 +15,7 @@ function bindInsertButton(){
 		var req = new XMLHttpRequest();
 		
 		//Add in 
-		req.open('GET', "http://52.36.135.10:3000/insert" + "?" + "name=" + payload.name || "Missing Name" + "&reps=" + payload.reps || 0 + "&weight=" + payload.weight || 0 + "&date=" payload.date || 0000-00-00 + "&lbs=" + payload.units || 0 , true);
+		req.open('GET', "http://52.36.135.10:3000/insert" + "?" + "name=" + payload.name || "Missing Name"/* + "&reps=" + payload.reps || 0 + "&weight=" + payload.weight || 0 + "&date=" payload.date || 0000-00-00 + "&lbs=" + payload.units || 0 */, true);
 		req.setRequestHeader('Content-Type', 'application/json');
 		req.addEventListener('load',function(){
 			var response = JSON.parse(req.responseText); // This gives us the response as a variable
