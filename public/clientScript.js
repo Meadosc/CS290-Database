@@ -78,7 +78,7 @@ function createTable(data){
 		var btn = document.createElement("BUTTON");
 		var t = document.createTextNode("Delete");
 		btn.appendChild(t);
-		//table.row.appendChild(button)
+		table.row.appendChild(button)
 	}
 };
 
