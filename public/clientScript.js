@@ -1,6 +1,43 @@
 document.addEventListener('DOMContentLoaded', callSelect);//Renders page and calls to select page.
 document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the input button
 
+function bindInsertButton(){
+    document.getElementById("insertSubmit").addEventListener("click", function(event){
+        var exercise = {};
+        exercise.name = document.getElementById("name").value;
+        exercise.reps = document.getElementById("weight").value;
+        exercise.weight = document.getElementById("reps").value;
+        exercise.date = document.getElementById("date").value;
+    
+        var radios = document.getElementsByName("units");
+    
+        if(radios[0].checked) exercise.units = "1";
+        else exercise.units = "0";
+    
+        var req = new XMLHttpRequest();
+        req.open("POST", "http://52.36.135.10:3000//insert",true);
+        req.setRequestHeader("Content-Type", "application/json");
+    
+        req.addEventListener("load", function(){
+        
+            if(req.status >= 200 && req.status < 400){
+                var response = JSON.parse(req.responseText);
+                console.log(response.data);
+                console.log(response);
+                console.log(req);
+            }
+            else{
+                console.log("Error in network request: " + req.statusText);
+                console.log(req);
+            }
+        });
+    
+        console.log(JSON.stringify(exercise));
+        req.send(JSON.stringify(exercise));
+        event.preventDefault();
+        });
+}
+/*
 //calls to the input page and inserts data
 function bindInsertButton(){
 	//Listener for the insert button
@@ -13,11 +50,15 @@ function bindInsertButton(){
 		payload.reps = document.getElementById('reps').value;
 		payload.weight = document.getElementById('weight').value;
 		payload.date = document.getElementById('date').value;
-		payload.units = document.getElementsByName('units').value;
+		var radio = document.getElementsByName('units').value;
+		
+		if(radio[0].checked) {payload.units = "1"};
+        	else {payload.units = "0"};
+		
 		var req = new XMLHttpRequest();
 		
 		//make request to insert page 
-		var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + /*"&date=" payload.date + */"&lbs=" + payload.units;
+		var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" payload.date + "&lbs=" + payload.units;
 		console.log(requestString); //debug
 		req.open('GET', "http://52.36.135.10:3000/insert?" + requestString , true);
 		req.setRequestHeader('Content-Type', 'application/json');
@@ -28,7 +69,7 @@ function bindInsertButton(){
 		req.send(); //Send the content	
 	});
 };
-
+*/
 //calls the select page to get info for table
 function callSelect(){
 	var req = new XMLHttpRequest();
