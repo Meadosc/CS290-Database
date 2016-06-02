@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the inpu
 
 //calls to the input page and inserts data
 function bindInsertButton(){
+	console.log("bindInsertButton function is called"); // debug
 	//Listener for the insert button
 	document.getElementById('insertSubmit').addEventListener('click', function(event){
 		
