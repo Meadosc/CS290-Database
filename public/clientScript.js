@@ -82,6 +82,13 @@ function createTable(data){
 		//btn.onclick = (function(entry) {return function() {chooseUser(entry);}})(entry);
 		row.appendChild(btn);
 		
+		//Add update button
+		var upBtn = document.createElement("BUTTON");
+		var UpdateText = document.createTextNode("Update");
+		upBtn.appendChild(UpdateText);
+		//btn.onclick = (function(entry) {return function() {chooseUser(entry);}})(entry);
+		row.appendChild(upBtn);
+		
 		//add data + buttons to table
 		table.appendChild(row);
 	}
