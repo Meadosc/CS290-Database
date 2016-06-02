@@ -67,13 +67,15 @@ function createTable(data){
 
 	//Create table body
 	for(var i in data){
-		var row = document.createElement("tr");        
+		var row = document.createElement("tr");
+		var rowID = null;
 		for(var j in data[i]){
 			var col = document.createElement("td");
 			col.textContent = data[i][j];
 			
 /*debug*/		//console.log("data[i][j]: " + data[i][j]);
-			
+			rowID = data[i][0];
+/*debug*/		console.log("rowID: " + rowID);			
 			row.appendChild(col);
 		}
 		
