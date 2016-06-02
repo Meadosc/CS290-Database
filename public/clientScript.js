@@ -31,6 +31,8 @@ function createTable(data){
 	
 	//Create table headers
 	var headers = ["id","name","reps","weight","date","lbs"];
+	var row = document.createElement("tr"); 
+	table.appendChild(row); //Create a new row
 	for(var j in headers){
 		var col = document.createElement("th");
 		col.textContent = headers[j];
