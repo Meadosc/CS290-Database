@@ -34,7 +34,7 @@ function bindInsertButton(){
                 console.log(req);
             }
         });
-        event.preventDefault(); //stop page from refreshing
+        //event.preventDefault(); //stop page from refreshing
         });
 }
 /*
