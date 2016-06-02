@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the inpu
 
 //calls to the input page and inserts data
 function bindInsertButton(){
-	
+	console.log("bindInsertButton is called");
 	var payload = {name:null,reps:null,weight:null,date:null,lbs:null,}; //payload is the object I will use to send data to the insert page via get request
 	payload.name = document.getElementById('name').value;
 	payload.reps = document.getElementById('reps').value;
