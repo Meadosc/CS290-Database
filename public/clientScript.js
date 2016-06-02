@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', callSelect);
 
+function 
+
+//calls the select page to get info for table
 function callSelect(){
 	var req = new XMLHttpRequest();
 	req.open('GET', "http://52.36.135.10:3000/select", true);
