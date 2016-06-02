@@ -30,6 +30,7 @@ function bindInsertButton(){
 		//req.setRequestHeader('Content-Type', 'application/json');
 		req.addEventListener('load',function(){
 			var response = JSON.parse(req.responseText); // This gives us the response as a variable
+			console.log("req.responseText: " + req.responseText); //testing
 			/*
 			//add a row to the table with new info
 			var table = document.getElementById('table'); //put the table element in a variable
