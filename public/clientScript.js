@@ -30,7 +30,7 @@ function bindInsertButton(){
 		req.addEventListener('load',function(){
 			//delete table and then insert new table
 			deleteTable(); //delete old table
-			//callSelect(); //create new table
+			callSelect(); //create new table
 		});
 		req.send(); //Send the content
 		event.preventDefault(); //Stop page from refreshing
