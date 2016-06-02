@@ -28,24 +28,19 @@ function bindInsertButton(){
 		
 		req.open('GET', "http://52.36.135.10:3000/insert?" + requestString , true);
 		req.addEventListener('load',function(){
-			//add a row to the table with new info
-			var table = document.getElementsByTagName("table"); //put the table element in a variable
-	/*debug*/	console.log("Table from insert: " + table);
-			var row = document.createElement("tr"); 
-			table[0].appendChild(row); //Create a new row
-			//using payload array to populate new row
-			for(var j in payload){
-				var col = document.createElement("td");
-				col.textContent = payload[j];
-				row.appendChild(col);
-				
-			};
+			//delete table and then repopulate
+			deleteTable(); //delete old table
+			//callSelect(); //create new table
 		});
 		req.send(); //Send the content
 		event.preventDefault(); //Stop page from refreshing
 	});
 };
 
+function deleteTable(){
+	
+	
+};
 
 //calls the select page to get info for table
 function callSelect(){
