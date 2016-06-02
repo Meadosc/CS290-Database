@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', callSelect);
 
-function 
+var form = document.createElement("form");
+document.body.appendChild(form);
 
 //calls the select page to get info for table
 function callSelect(){
