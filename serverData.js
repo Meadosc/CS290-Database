@@ -43,6 +43,7 @@ app.get('/insert',function(req,res,next){
       next(err);
       return;
     }
+    res.send(JSON.stringify(result));
     res.render('home', context);
   });
 });
