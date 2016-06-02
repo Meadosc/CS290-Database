@@ -3,14 +3,6 @@ document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the inpu
 
 //calls to the input page and inserts data
 function bindInsertButton(){
-	console.log("bindInsertButton function is called"); // debug
-	
-			
-	//debug
-	var req = new XMLHttpRequest();
-	req.open('GET', "http://52.36.135.10:3000/insert?name=treps", true);
-	//debug
-	
 	
 	//Listener for the insert button
 	document.getElementById('insertSubmit').addEventListener("click", function(event){
@@ -22,13 +14,17 @@ function bindInsertButton(){
 		payload.reps = document.getElementById('reps').value;
 		payload.weight = document.getElementById('weight').value;
 		payload.date = document.getElementById('date').value;
-		payload.units= document.getElementsByName('units').value;
+		//payload.units= document.getElementsByName('units').value;
+		
+		var radio = document.getElementsByName("units");
+	        if(radios[0].checked) payload.units = "1";
+	        else payload.units = "0";
 		
 		console.log("radio: " + payload.units);
 		
-		var req = new XMLHttpRequest();
-		
+
 		//make request to insert page 
+		var req = new XMLHttpRequest();
 		var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
 		console.log("Request String: " + requestString); //debug
 		
