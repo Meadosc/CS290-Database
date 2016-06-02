@@ -23,6 +23,9 @@ function createTable(data){
 	//Add in table headers
 	var row = document.createElement("tr");  
 	table.appendChild(row); //Create a new row
+	var col = document.createElement("th");
+	col.textContent = "id"; //add ID header
+	row.appendChild(col);
 	
 	for(var i in data){
 		var row = document.createElement("tr");        
