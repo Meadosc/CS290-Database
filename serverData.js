@@ -43,7 +43,7 @@ app.get('/insert',function(req,res,next){
       next(err);
       return;
     }
-    //res.send(JSON.stringify(result));
+    //res.send(JSON.stringify(result)); //This line caused a problem that killed the node app
     res.render('home', context);
   });
 });
