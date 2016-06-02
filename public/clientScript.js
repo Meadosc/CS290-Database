@@ -15,7 +15,7 @@ function bindInsertButton(){
 		var req = new XMLHttpRequest();
 		
 		//make request to insert page 
-		var requestString= "name=" + payload.name || "Missing Name" + "&reps=" + payload.reps || 0 + "&weight=" + payload.weight || 0 + "&date=" payload.date + "&lbs=" + payload.units || 0;
+		var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" payload.date + "&lbs=" + payload.units;
 		console.log(requestString); //debug
 		req.open('GET', "http://52.36.135.10:3000/insert?" + requestString , true);
 		req.setRequestHeader('Content-Type', 'application/json');
