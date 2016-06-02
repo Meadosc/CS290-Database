@@ -73,14 +73,17 @@ function createTable(data){
 			col.textContent = data[i][j];
 			row.appendChild(col);
 		}
-		table.appendChild(row);
+	
 		
 		//Add delete button
 		var btn = document.createElement("BUTTON");
 		var t = document.createTextNode("Delete");
 		btn.appendChild(t);
 		//btn.onclick = (function(entry) {return function() {chooseUser(entry);}})(entry);
-		td.appendChild(btn);
+		row.appendChild(btn);
+		
+		//add data + buttons to table
+		table.appendChild(row);
 	}
 };
 
