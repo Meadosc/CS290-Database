@@ -26,6 +26,7 @@ function bindInsertButton(){
 		req.open('GET', "http://52.36.135.10:3000/insert?" + requestString , true);
 		//req.setRequestHeader('Content-Type', 'application/json');
 		req.addEventListener('load',function(){
+			console.log("calling select...");
 			callSelect(); //call for the new table.
 		});
 		req.send(); //Send the content
