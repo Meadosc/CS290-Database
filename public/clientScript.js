@@ -35,8 +35,7 @@ function bindInsertButton(){
 		req.open('GET', "http://52.36.135.10:3000/insert?" + requestString , true);
 		//req.setRequestHeader('Content-Type', 'application/json');
 		req.addEventListener('load',function(){
-			var response = JSON.parse(req.responseText); // This gives us the response as a variable
-			createTable(response); //Creates the table
+			//callSelect(); //call for the new table.
 		});
 		req.send(); //Send the content
 		event.preventDefault(); //Stop page from refreshing
