@@ -1,5 +1,11 @@
-document.addEventListener('DOMContentLoaded', callSelect);
+document.addEventListener('DOMContentLoaded', callSelect);//Renders page and calls to select page.
+document.addEventListener('DOMContentLoaded', bindInputButton);//Binds the input button
 
+//calls to the input page and inserts data
+function bindInputButton(){
+	
+	
+};
 
 //calls the select page to get info for table
 function callSelect(){
