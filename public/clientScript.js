@@ -79,14 +79,18 @@ function createTable(data){
 		var btn = document.createElement("BUTTON");
 		var t = document.createTextNode("Delete");
 		btn.appendChild(t);
-		//btn.onclick = (function(entry) {return function() {chooseUser(entry);}})(entry);
+		btn.id = data[i][1];
+		
+		console.log("button id: " + btn.id);
+		
+		btn.onclick = function(){deleteButton()};  //Reference deleteButton function to delete a row
 		row.appendChild(btn);
 		
 		//Add update button
 		var upBtn = document.createElement("BUTTON");
 		var UpdateText = document.createTextNode("Update");
 		upBtn.appendChild(UpdateText);
-		//btn.onclick = (function(entry) {return function() {chooseUser(entry);}})(entry);
+		upBtn.onclick = function(){updateButton()}; //Reference updateButton function
 		row.appendChild(upBtn);
 		
 		//add data + buttons to table
@@ -94,3 +98,6 @@ function createTable(data){
 	}
 };
 
+function deleteButton(){}:
+
+function updateButton(){};
