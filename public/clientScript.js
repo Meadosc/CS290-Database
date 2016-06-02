@@ -81,7 +81,8 @@ function createTable(data){
 		btn.appendChild(t);
 		btn.id = data[i][1];
 		
-		console.log("button id: " + btn.id);
+/*debug*/	console.log("data data[i][1]: " + data[i][1]);
+/*debug*/	console.log("button id: " + btn.id);
 		
 		btn.onclick = function(){deleteButton()};  //Reference deleteButton function to delete a row
 		row.appendChild(btn);
