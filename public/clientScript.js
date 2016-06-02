@@ -1,16 +1,11 @@
 document.addEventListener('DOMContentLoaded', callSelect);//Renders page and calls to select page.
-
-
 document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the input button
-
 
 //calls to the input page and inserts data
 function bindInsertButton(){
 	
 	//Listener for the insert button
 	document.getElementById('insertSubmit').addEventListener("click", function(event){
-	
-		//console.log("bindInsertButton is called with click event"); // debug
 		
 		var payload = {}; //payload is the object I will use to send data to the insert page via get request
 		payload.name = document.getElementById("name").value;
@@ -24,7 +19,6 @@ function bindInsertButton(){
 		//make request to insert page 
 		var req = new XMLHttpRequest();
 		var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
-		//console.log("Request String: " + requestString); //debug
 		
 		req.open('GET', "http://52.36.135.10:3000/insert?" + requestString , true);
 		req.addEventListener('load',function(){
@@ -49,7 +43,6 @@ function callSelect(){
 	req.open('GET', "http://52.36.135.10:3000/select", true);
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function(){
-		//console.log("req.responseText: " + req.responseText); //testing
 		var response = JSON.parse(req.responseText); // This gives us the response as a variable
 		createTable(response); //Creates the table
 	});
@@ -70,7 +63,7 @@ function createTable(data){
 		var col = document.createElement("th");
 		col.textContent = headers[j];
 		row.appendChild(col);
-};
+	};
 
 	//Create table body
 	for(var i in data){
@@ -82,6 +75,4 @@ function createTable(data){
 		}
 		table.appendChild(row);
 	}
-
-/*debug*/	console.log("Table from createTable: " + table);
 };
