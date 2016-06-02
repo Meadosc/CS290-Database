@@ -14,14 +14,9 @@ function bindInsertButton(){
 		payload.reps = document.getElementById('reps').value;
 		payload.weight = document.getElementById('weight').value;
 		payload.date = document.getElementById('date').value;
-		//payload.units= document.getElementsByName('units').value;
-		
 		var radio = document.getElementsByName("units");
 	        if(radio[0].checked) payload.units = "1";
 	        else payload.units = "0";
-		
-		console.log("radio: " + payload.units);
-		
 
 		//make request to insert page 
 		var req = new XMLHttpRequest();
@@ -31,7 +26,7 @@ function bindInsertButton(){
 		req.open('GET', "http://52.36.135.10:3000/insert?" + requestString , true);
 		//req.setRequestHeader('Content-Type', 'application/json');
 		req.addEventListener('load',function(){
-			//callSelect(); //call for the new table.
+			callSelect(); //call for the new table.
 		});
 		req.send(); //Send the content
 		event.preventDefault(); //Stop page from refreshing
