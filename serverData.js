@@ -42,8 +42,6 @@ app.get('/insert',function(req,res,next){
       next(err);
       return;
     }
-    res.send(JSON.stringify(rows));
-    context.results = JSON.stringify(rows);
     res.render('home', context);
   });
 });
