@@ -10,13 +10,13 @@ function bindInsertButton(){
 	//Listener for the insert button
 	document.getElementById('insertSubmit').addEventListener("click", function(event){
 	
-		console.log("bindInsertButton is called with click event"); // debug
+		//console.log("bindInsertButton is called with click event"); // debug
 		
 		var payload = {}; //payload is the object I will use to send data to the insert page via get request
-		payload.name = document.getElementById('name').value;
-		payload.reps = document.getElementById('reps').value;
-		payload.weight = document.getElementById('weight').value;
-		payload.date = document.getElementById('date').value;
+		payload.name = document.getElementById("name").value;
+		payload.reps = document.getElementById("reps").value;
+		payload.weight = document.getElementById("weight").value;
+		payload.date = document.getElementById("date").value;
 		var radio = document.getElementsByName("units");
 	        if(radio[0].checked) payload.units = "1";
 	        else payload.units = "0";
