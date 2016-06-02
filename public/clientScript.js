@@ -36,7 +36,7 @@ function bindInsertButton(){
         });
         //event.preventDefault(); //stop page from refreshing
         });
-}
+};
 /*
 //calls to the input page and inserts data
 function bindInsertButton(){
