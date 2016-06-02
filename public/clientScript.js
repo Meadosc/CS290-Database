@@ -98,6 +98,6 @@ function createTable(data){
 	}
 };
 
-function deleteButton(){}:
+function deleteButton(){};
 
 function updateButton(){};
