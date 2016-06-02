@@ -52,6 +52,7 @@ function bindInsertButton(){
 
 //calls the select page to get info for table
 function callSelect(){
+	console.log("calling select..."); // debug
 	var req = new XMLHttpRequest();
 	req.open('GET', "http://52.36.135.10:3000/select", true);
 	req.setRequestHeader('Content-Type', 'application/json');
@@ -65,7 +66,7 @@ function callSelect(){
 
 //Creates a table.
 function createTable(data){
-   
+   	console.log("calling createTable...");
 	var table = document.createElement("table");//Create table in HTML
 	document.body.appendChild(table); //Add the table as a child of the body in HTML
 
