@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', callSelect);//Renders page and calls to select page.
+
+/*
 document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the input button
+
 
 //calls to the input page and inserts data
 function bindInsertButton(){
@@ -39,12 +42,13 @@ function bindInsertButton(){
 				row.appendChild(col);
 				
 			};
-			*/
+			*//*
 		});
 		req.send(); //Send the content
 		event.preventDefault(); //Stop page from refreshing
 	});
 };
+*/
 
 //calls the select page to get info for table
 function callSelect(){
