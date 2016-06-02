@@ -7,6 +7,10 @@ function bindInsertButton(){
 	//Listener for the insert button
 	document.getElementById('insertSubmit').addEventListener('click', function(event){
 		
+	//debug
+	req.open('GET', "http://52.36.135.10:3000/insert?name=treps", true);
+	//debug
+	
 		console.log("bindInsertButton is called with click event"); // debug
 		
 		var payload = {}; //payload is the object I will use to send data to the insert page via get request
