@@ -3,19 +3,22 @@ document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the inpu
 
 function bindInsertButton(){
     document.getElementById("insertSubmit").addEventListener("click", function(event){
-        var exercise = {};
-        exercise.name = document.getElementById("name").value;
-        exercise.reps = document.getElementById("weight").value;
-        exercise.weight = document.getElementById("reps").value;
-        exercise.date = document.getElementById("date").value;
-    
-        var radios = document.getElementsByName("units");
-    
-        if(radios[0].checked) exercise.units = "1";
-        else exercise.units = "0";
-    
+	console.log("bindInsertButton is called with click event"); // debug
+	
+	var payload = {}; //payload is the object I will use to send data to the insert page
+	payload.name = document.getElementById('name').value;
+	payload.reps = document.getElementById('reps').value;
+	payload.weight = document.getElementById('weight').value;
+	payload.date = document.getElementById('date').value;
+	var radio = document.getElementsByName('units').value;
+	
+	if(radio[0].checked) {payload.units = "1"};
+	else {payload.units = "0"};
+    	
+    	var requestString = "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" payload.date + "&lbs=" + payload.units;
+    	
         var req = new XMLHttpRequest();
-        req.open("POST", "http://52.36.135.10:3000//insert",true);
+        req.open("POST", "http://52.36.135.10:3000/insert?" + requestString,true);
         req.setRequestHeader("Content-Type", "application/json");
     
         req.addEventListener("load", function(){
@@ -31,10 +34,7 @@ function bindInsertButton(){
                 console.log(req);
             }
         });
-    
-        console.log(JSON.stringify(exercise));
-        req.send(JSON.stringify(exercise));
-        event.preventDefault();
+        event.preventDefault(); //stop page from refreshing
         });
 }
 /*
