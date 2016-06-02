@@ -28,7 +28,7 @@ function bindInsertButton(){
 		
 		req.open('GET', "http://52.36.135.10:3000/insert?" + requestString , true);
 		req.addEventListener('load',function(){
-			//delete table and then repopulate
+			//delete table and then insert new table
 			deleteTable(); //delete old table
 			//callSelect(); //create new table
 		});
@@ -37,9 +37,10 @@ function bindInsertButton(){
 	});
 };
 
+//Delete table so a new and updated table can be displayed.
 function deleteTable(){
-	
-	
+	var table = document.getElementById('tableID');
+	table.parentNode.removeChild(table); //Remove table. The table must be removed from its parent
 };
 
 //calls the select page to get info for table
@@ -58,6 +59,7 @@ function callSelect(){
 //Creates a table.
 function createTable(data){
 	var table = document.createElement("table");//Create table in HTML
+	table.setAttribute('id','tableID'); //Add id to table so I can use getElementById()
 	document.body.appendChild(table); //Add the table as a child of the body in HTML
 
 	//Create table headers
