@@ -72,7 +72,7 @@ function createTable(data){
 			var col = document.createElement("td");
 			col.textContent = data[i][j];
 			
-/*debug*/		console.log("data[i][j]: " + data[i][j]);
+/*debug*/		//console.log("data[i][j]: " + data[i][j]);
 			
 			row.appendChild(col);
 		}
@@ -82,8 +82,9 @@ function createTable(data){
 		var t = document.createTextNode("Delete");
 		btn.appendChild(t);
 		//btn.id = data[i][0];
-		
-/*debug*/	console.log("data[i][0]: " + data[i]);
+
+/*debug*/	console.log("data.id: " + data.id);		
+/*debug*/	console.log("data[i]: " + data[i]);
 /*debug*/	//console.log("button id: " + btn.id);
 		
 		btn.onclick = function(){deleteButton()};  //Reference deleteButton function to delete a row
