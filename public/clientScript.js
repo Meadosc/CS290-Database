@@ -8,7 +8,7 @@ function bindInsertButton(){
 		
 		console.log("bindInsertButton is called with click event"); // debug
 		
-		var payload = {name:null,reps:null,weight:null,date:null,lbs:null,}; //payload is the object I will use to send data to the insert page via get request
+		var payload = {}; //payload is the object I will use to send data to the insert page via get request
 		payload.name = document.getElementById('name').value;
 		payload.reps = document.getElementById('reps').value;
 		payload.weight = document.getElementById('weight').value;
