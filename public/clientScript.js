@@ -15,7 +15,7 @@ function bindInsertButton(){
 	var req = new XMLHttpRequest();
 	
 	//Add in 
-	req.open('GET', "http://52.36.135.10:3000/insert" + , true); //add in payload data****************************
+	req.open('GET', "http://52.36.135.10:3000/insert"  , true); //add in payload data****************************
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function(){
 		var response = JSON.parse(req.responseText); // This gives us the response as a variable
