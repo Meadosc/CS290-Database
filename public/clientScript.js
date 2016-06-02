@@ -1,10 +1,28 @@
 document.addEventListener('DOMContentLoaded', callSelect);//Renders page and calls to select page.
-document.addEventListener('DOMContentLoaded', bindInputButton);//Binds the input button
+document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the input button
 
 //calls to the input page and inserts data
-function bindInputButton(){
+function bindInsertButton(){
 	
+	var payload = {name:null,reps:null,weight:null,date:null,lbs:null,}; //payload is the object I will use to send data to the insert page via get request
+	payload.name = document.getElementById('name').value;
+	payload.reps = document.getElementById('reps').value;
+	payload.weight = document.getElementById('weight').value;
+	payload.date = document.getElementById('date').value;
+	payload.lbs = document.getElementById('lbs').value;
+	//Listener for the insert button
+	document.getElementById('insertSubmit').addEventListener('click', function(event){
+	var req = new XMLHttpRequest();
 	
+	//Add in 
+	req.open('GET', "http://52.36.135.10:3000/insert" + , true); //add in payload data****************************
+	req.setRequestHeader('Content-Type', 'application/json');
+	req.addEventListener('load',function(){
+		var response = JSON.parse(req.responseText); // This gives us the response as a variable
+		createTable(response); //Creates the table
+	});
+	req.send(); //Send the content	
+	})
 };
 
 //calls the select page to get info for table
@@ -18,8 +36,6 @@ function callSelect(){
 		createTable(response); //Creates the table
 	});
 	req.send(); //Send the content
-			
-	// I'm not clicking anything. event.preventDefault(); //Stops form from refreshing page
 };
 
 //Creates a table.
