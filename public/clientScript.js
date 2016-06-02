@@ -71,9 +71,11 @@ function createTable(data){
 		for(var j in data[i]){
 			var col = document.createElement("td");
 			col.textContent = data[i][j];
+			
+/*debug*/		console.log("data data[i][j]: " + data[i][j]);
+			
 			row.appendChild(col);
 		}
-	
 		
 		//Add delete button
 		var btn = document.createElement("BUTTON");
