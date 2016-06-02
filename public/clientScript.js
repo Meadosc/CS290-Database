@@ -39,6 +39,7 @@ function bindInsertButton(){
 			createTable(response); //Creates the table
 		});
 		req.send(); //Send the content
+		event.preventDefault(); //Stop page from refreshing
 	});
 };
 
