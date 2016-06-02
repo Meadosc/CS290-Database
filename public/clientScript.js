@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', callSelect);//Renders page and calls to select page.
-document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the input button
+//document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the input button
 
 function bindInsertButton(){
     document.getElementById("insertSubmit").addEventListener("click", function(event){
