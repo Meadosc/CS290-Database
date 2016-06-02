@@ -17,7 +17,7 @@ function bindInsertButton(){
 		//payload.units= document.getElementsByName('units').value;
 		
 		var radio = document.getElementsByName("units");
-	        if(radios[0].checked) payload.units = "1";
+	        if(radio[0].checked) payload.units = "1";
 	        else payload.units = "0";
 		
 		console.log("radio: " + payload.units);
