@@ -34,8 +34,8 @@ function bindInsertButton(){
 			var row = document.createElement("tr"); 
 			table[0].appendChild(row); //Create a new row
 			//using payload array to populate new row
-			for(var j in payload){
-				var col = document.createElement("th");
+			for(var j+1 in payload){
+				var col = document.createElement("td");
 				col.textContent = payload[j];
 				row.appendChild(col);
 				
