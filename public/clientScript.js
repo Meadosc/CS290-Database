@@ -30,6 +30,7 @@ function bindInsertButton(){
 		req.addEventListener('load',function(){
 			//add a row to the table with new info
 			var table = document.getElementById("table"); //put the table element in a variable
+	/*debug*/	console.log("Table from insert: " + table);
 			var row = document.createElement("tr"); 
 			table.appendChild(row); //Create a new row
 			//using payload array to populate new row
@@ -84,4 +85,6 @@ function createTable(data){
 		}
 		table.appendChild(row);
 	}
+
+/*debug*/	console.log("Table from createTable: " + table);
 };
