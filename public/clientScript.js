@@ -5,7 +5,7 @@ function callSelect(){
 	req.open('GET', "http://52.36.135.10:3000/select", true);
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function(){
-		console.log("req.responseText: " + req.responseText); //testing
+		//console.log("req.responseText: " + req.responseText); //testing
 		var response = JSON.parse(req.responseText); // This gives us the response as a variable
 		createTable(response); //Creates the table
 	});
