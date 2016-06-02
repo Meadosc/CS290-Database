@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', callSelect);//Renders page and calls to select page.
 
-/*
+
 document.addEventListener('DOMContentLoaded', bindInsertButton);//Binds the input button
 
 
@@ -42,22 +42,21 @@ function bindInsertButton(){
 				row.appendChild(col);
 				
 			};
-			*//*
+			*/
 		});
 		req.send(); //Send the content
 		event.preventDefault(); //Stop page from refreshing
 	});
 };
-*/
+
 
 //calls the select page to get info for table
 function callSelect(){
-	console.log("calling select..."); // debug
 	var req = new XMLHttpRequest();
 	req.open('GET', "http://52.36.135.10:3000/select", true);
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function(){
-		console.log("req.responseText: " + req.responseText); //testing
+		//console.log("req.responseText: " + req.responseText); //testing
 		var response = JSON.parse(req.responseText); // This gives us the response as a variable
 		createTable(response); //Creates the table
 	});
@@ -66,7 +65,6 @@ function callSelect(){
 
 //Creates a table.
 function createTable(data){
-   	console.log("calling createTable...");
 	var table = document.createElement("table");//Create table in HTML
 	document.body.appendChild(table); //Add the table as a child of the body in HTML
 
