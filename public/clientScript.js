@@ -179,21 +179,22 @@ function updateButton(id){
 	updateSubmitButton = document.createElement("BUTTON");
 	theText = document.createTextNode("Update");
 	updateSubmitButton.appendChild(theText);
-	updateSubmitButton.addEventListener("click", updateGET(id)); //Reference the function that will do a get request to the update page
-	event.preventDefault(); //Stop page from refreshing
+	updateSubmitButton.addEventListener("click", function (event, id){
+		updateGET(id);
+		event.preventDefault(); //Stop page from refreshing
+	}); //Reference the function that will do a get request to the update page
 	fieldset.appendChild(updateSubmitButton);
 	//*******************************************************
 
 	upForm.appendChild(fieldset); //append the fieldset to the form	
 	var table = document.getElementById("tableID"); //Get the table ID so I can put the form above it in the next line
 	document.body.insertBefore(upForm, table);
-	event.preventDefault(); //Stop page from refreshing
+
 	
 	
 };
 
 function updateGET(id){
 	console.log("updateGET function was called successfully");
-	event.preventDefault(); //Stop page from refreshing
 	
 };
