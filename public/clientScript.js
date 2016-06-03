@@ -187,11 +187,13 @@ function updateButton(id){
 	upForm.appendChild(fieldset); //append the fieldset to the form	
 	var table = document.getElementById("tableID"); //Get the table ID so I can put the form above it in the next line
 	document.body.insertBefore(upForm, table);
+	event.preventDefault(); //Stop page from refreshing
 	
 	
 };
 
 function updateGET(id){
-	console.log("updateGET function was called successfully");	
+	console.log("updateGET function was called successfully");
+	event.preventDefault(); //Stop page from refreshing
 	
 };
