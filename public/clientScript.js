@@ -130,7 +130,8 @@ function updateButton(id){
 	//Create fieldset + label**********************************
 	var fieldset = document.createElement("fieldset");
 	var legend = document.createElement("legend");
-	legend.setAttribute('textContent','Update the workout');
+	var legendText = document.createTextNode("Update the workout");
+	legend.setAttribute('textContent',legendText);
 	fieldset.appendChild(legend);
 
 	//********************************************************
