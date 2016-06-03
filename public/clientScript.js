@@ -84,7 +84,6 @@ function createTable(data){
 		var t = document.createTextNode("Delete");
 		btn.appendChild(t);
 		btn.id = row.firstChild.textContent;
-		
 		btn.onclick = function(x){
 			return function(){
 				deleteButton(x);
@@ -96,7 +95,12 @@ function createTable(data){
 		var upBtn = document.createElement("BUTTON");
 		var UpdateText = document.createTextNode("Update");
 		upBtn.appendChild(UpdateText);
-		upBtn.onclick = function(){updateButton()}; //Reference updateButton function
+		upBtn.id = row.firstChild.textContent;
+		upBtn.onclick = function(x){
+			return function(){
+				updateButton(x);
+			};
+		}(upBtn.id); 
 		row.appendChild(upBtn);
 		
 		//add data + buttons to table
@@ -105,9 +109,6 @@ function createTable(data){
 };
 
 function deleteButton(id){
-	console.log("deleteButton() function is running.");
-	console.log("btn.id = " + id);
-	
 	//make request to insert page 
 	var req = new XMLHttpRequest();
 	req.open('GET', "http://52.36.135.10:3000/delete?id=" + id , true);
@@ -120,4 +121,8 @@ function deleteButton(id){
 	event.preventDefault(); //Stop page from refreshing
 };
 
-function updateButton(){};
+function updateButton(id){
+	console.log("updateButton function is running");
+	console.log("updateButton id: " + id);
+	
+};
