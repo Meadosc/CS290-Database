@@ -122,19 +122,30 @@ function deleteButton(id){
 };
 
 function updateButton(id){
+	//Create form and set attributes*******************************
 	var upForm = document.createElement("form"); //create form element
 	upForm.setAttribute("id", id); //Give the form the same ID as the data we are changing
+	//***********************************************************
+	
+	//Create fieldset + label**********************************
+	var fieldset = document.createElement("fieldset");
+	var legend = document.createElement("legend");
+	legend.setAttribute('textContent','Update the workout');
+	legend.
+	fieldset.appendChild(legend);
+	upForm.appendChild(fieldset);
+	//********************************************************
 	
 	//Below are the input text boxes of the form**************
 	var name = document.createElement("input");
 	name.setAttribute('type','text');
 	name.setAttribute('name','name');
-	upForm.appendChild(name);
+	upForm.fieldset.appendChild(name);
 	
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
 	reps.setAttribute('name','reps');
-	upForm.appendChild(reps);
+	upForm.fieldset.appendChild(reps);
 	//*******************************************************
 
 	
