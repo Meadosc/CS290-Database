@@ -196,5 +196,6 @@ function updateButton(id){
 
 function updateGET(id){
 	console.log("updateGET function was called successfully");
+	console.log("id = " + id);
 	
 };
