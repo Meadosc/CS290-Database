@@ -209,6 +209,8 @@ function updateGET(id){
 	var req = new XMLHttpRequest();
 	var requestString= "id" + payload.id + "&name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
 	
+/*debug*/ console.log("requestString: " + requestString)	
+	
 	req.open('GET', "http://52.36.135.10:3000/update?" + requestString , true);
 	req.addEventListener('load',function(){
 		//delete table and then insert new table
