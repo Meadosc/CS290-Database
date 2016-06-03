@@ -105,7 +105,7 @@ function createTable(data){
 
 function deleteButton(id){
 	console.log("deleteButton() function is running.");
-	console.log("btn.id = " id);
+	console.log("btn.id = " + id);
 };
 
 function updateButton(){};
