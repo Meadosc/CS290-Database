@@ -110,8 +110,6 @@ function deleteButton(id){
 	
 	//make request to insert page 
 	var req = new XMLHttpRequest();
-	var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
-	
 	req.open('GET', "http://52.36.135.10:3000/delete?id=" + id , true);
 	req.addEventListener('load',function(){
 		//delete table and then insert new table
