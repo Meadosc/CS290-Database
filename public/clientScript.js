@@ -83,7 +83,7 @@ function createTable(data){
 		var btn = document.createElement("BUTTON");
 		var t = document.createTextNode("Delete");
 		btn.appendChild(t);
-		btn.id = btn.previousSibling;
+		btn.id = row.firstChild;
 
 /*debug*/	//console.log("data[i][0]: " + data[i][0]);
 /*debug*/	console.log("button id: " + btn.id);
