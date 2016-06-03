@@ -84,18 +84,11 @@ function createTable(data){
 		var t = document.createTextNode("Delete");
 		btn.appendChild(t);
 		btn.id = row.firstChild.textContent;
-
-/*debug*/	//console.log("data[i][0]: " + data[i][0]);
-/*debug*/	console.log("button id: " + btn.id);
 		
 		btn.onclick = function(x){
 			return function(){
-				console.log("calling from within closure fix. btn.id =  " + x);
 				deleteButton(x);
-				console.log("deleteButton() function is running.");
 			};
-			
-			console.log("btn.id = " + btn.id);
 		}(btn.id);  
 		row.appendChild(btn);
 		
