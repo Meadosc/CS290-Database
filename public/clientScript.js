@@ -88,14 +88,14 @@ function createTable(data){
 /*debug*/	//console.log("data[i][0]: " + data[i][0]);
 /*debug*/	console.log("button id: " + btn.id);
 		
-		btn.onclick = function(){deleteButton()};  //Reference deleteButton function to delete a row
+		btn.onclick = function(){deleteButton(btn.id)};  //Reference deleteButton function to delete a row
 		row.appendChild(btn);
 		
 		//Add update button
 		var upBtn = document.createElement("BUTTON");
 		var UpdateText = document.createTextNode("Update");
 		upBtn.appendChild(UpdateText);
-		upBtn.onclick = function(btn.id){updateButton(btn.id)}; //Reference updateButton function
+		upBtn.onclick = function(){updateButton()}; //Reference updateButton function
 		row.appendChild(upBtn);
 		
 		//add data + buttons to table
