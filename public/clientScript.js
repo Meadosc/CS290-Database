@@ -125,7 +125,8 @@ function deleteButton(id){
 function updateButton(id){
 	//Create form and set attributes*******************************
 	var upForm = document.createElement("form"); //create form element
-	upForm.setAttribute("id", id); //Give the form the same ID as the data we are changing
+	//upForm.setAttribute("id", id); //Give the form the same ID as the data we are changing
+	
 	//***********************************************************
 	
 	//Create fieldset + label**********************************
