@@ -131,7 +131,6 @@ function updateButton(id){
 	var fieldset = document.createElement("fieldset");
 	var legend = document.createElement("legend");
 	legend.setAttribute('textContent','Update the workout');
-	legend.
 	fieldset.appendChild(legend);
 	upForm.appendChild(fieldset);
 	//********************************************************
