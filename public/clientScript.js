@@ -164,10 +164,10 @@ function updateButton(id){
 	
 	var unitsLBS = document.createElement("input");
 	unitsLBS.setAttribute('type','radio');
-	unitsLBS.setAttribute('name','units');
+	unitsLBS.setAttribute('name','upUnits');
 	var unitsKilos = document.createElement("input");
 	unitsKilos.setAttribute('type','radio');
-	unitsKilos.setAttribute('name','units');
+	unitsKilos.setAttribute('name','upUnits');
 	fieldset.appendChild(document.createTextNode("Units")); //Label the radio buttons
 	fieldset.appendChild(unitsLBS);
 	fieldset.appendChild(document.createTextNode("lbs"));
@@ -179,11 +179,7 @@ function updateButton(id){
 	updateSubmitButton = document.createElement("BUTTON");
 	theText = document.createTextNode("Update");
 	updateSubmitButton.appendChild(theText);
-	
-	console.log("id from outside updateSubmitButton: " + id);
-	
 	updateSubmitButton.addEventListener("click", function (event){
-		console.log("id from inside updateSubmitButton: " + id);
 		updateGET(id);
 		event.preventDefault(); //Stop page from refreshing
 	}); //Reference the function that will do a get request to the update page
@@ -199,6 +195,27 @@ function updateButton(id){
 };
 
 function updateGET(id){
-	console.log("id from inside updateGET: " + id);
+	var payload = {}; //payload is the object I will use to send data to the insert page via get request
+	payload.id = id;
+	payload.name = document.getElementById("upName").value;
+	payload.reps = document.getElementById("upReps").value;
+	payload.weight = document.getElementById("upWeight").value;
+	payload.date = document.getElementById("upDate").value;
+	var radio = document.getElementsByName("upUnits");
+        if(radio[0].checked) payload.units = "1";
+        else payload.units = "0";
+
+	//make request to insert page 
+	var req = new XMLHttpRequest();
+	var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
 	
+	req.open('GET', "http://52.36.135.10:3000/update?" + requestString , true);
+	req.addEventListener('load',function(){
+		//delete table and then insert new table
+		deleteTable(); //delete old table
+		callSelect(); //create new table
+	});
+	req.send(); //Send the content
+	event.preventDefault(); //Stop page from refreshing
+
 };
