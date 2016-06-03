@@ -128,6 +128,7 @@ function updateButton(id){
 	name.setAttribute('type','text');
 	name.setAttribute('name','name');
 	document.body.appendChild(upForm);
+	console.log("adding form");
 	
 	var table = document.getElementById("tableID"); //Get the table ID so I can put the form above it in the next line
 	//table.insertBefore(upForm, table);
