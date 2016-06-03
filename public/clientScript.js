@@ -124,13 +124,24 @@ function deleteButton(id){
 function updateButton(id){
 	var upForm = document.createElement("form"); //create form element
 	upForm.setAttribute("id", id); //Give the form the same ID as the data we are changing
+	
+	//Below are the input text boxes of the form**************
 	var name = document.createElement("input");
 	name.setAttribute('type','text');
 	name.setAttribute('name','name');
-	document.body.appendChild(upForm);
+	upForm.appendChild(name);
+	
+	var reps = document.createElement("input");
+	reps.setAttribute('type','text');
+	reps.setAttribute('name','reps');
+	upForm.appendChild(reps);
+	//*******************************************************
+	
+	document.body.appendChild(upForm); //Add the form to the document
 	console.log("adding form");
 	
-	var table = document.getElementById("tableID"); //Get the table ID so I can put the form above it in the next line
+	
+	//var table = document.getElementById("tableID"); //Get the table ID so I can put the form above it in the next line
 	//table.insertBefore(upForm, table);
 	
 };
