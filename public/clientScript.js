@@ -132,9 +132,7 @@ function updateButton(id){
 	var legend = document.createElement("legend");
 	var legendText = document.createTextNode("Update the workout");
 	legend.appendChild(legendText);
-	//legend.setAttribute('textContent', legendText);
 	fieldset.appendChild(legend);
-
 	//********************************************************
 	
 	//Below are the input text boxes of the form**************
@@ -142,6 +140,7 @@ function updateButton(id){
 	name.setAttribute('type','text');
 	name.setAttribute('name','name');
 	fieldset.appendChild(name);
+	fieldset.appendChild(document.createTextNode("Name"));
 	
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
