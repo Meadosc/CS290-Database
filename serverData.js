@@ -48,22 +48,6 @@ app.get('/insert',function(req,res,next){
   });
 });
 
-//page with form to update database info
-app.get('/updateForm',function(req,res,next){
-  var context = {};
-  /*mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.query.id], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-    if(result.length == 1){
-      var curVals = result[0];
-      res.render('updateForm',context);
-    }
-  });*/
-/*Debug*/ res.render('updateForm',context);
-});
-
 //Update data in the database
 app.get('/update',function(req,res,next){
   var context = {};
