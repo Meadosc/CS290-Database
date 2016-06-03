@@ -207,7 +207,7 @@ function updateGET(id){
 
 	//make request to insert page 
 	var req = new XMLHttpRequest();
-	var requestString= "name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
+	var requestString= "id" + payload.id + "&name=" + payload.name + "&reps=" + payload.reps + "&weight=" + payload.weight + "&date=" + payload.date + "&lbs=" + payload.units;
 	
 	req.open('GET', "http://52.36.135.10:3000/update?" + requestString , true);
 	req.addEventListener('load',function(){
