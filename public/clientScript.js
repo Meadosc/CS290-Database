@@ -179,8 +179,8 @@ function updateButton(id){
 	updateSubmitButton = document.createElement("BUTTON");
 	theText = document.createTextNode("Update");
 	updateSubmitButton.appendChild(theText);
-	updateSubmitButton.onclick=updateGET(id); //Reference the function that will do a get request to the update page
-	
+	updateSubmitButton.addEventListener("click", updateGET(id)); //Reference the function that will do a get request to the update page
+	event.preventDefault(); //Stop page from refreshing
 	fieldset.appendChild(updateSubmitButton);
 	//*******************************************************
 
