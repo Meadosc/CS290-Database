@@ -138,14 +138,34 @@ function updateButton(id){
 	//Below are the input text boxes of the form**************
 	var name = document.createElement("input");
 	name.setAttribute('type','text');
-	name.setAttribute('name','name');
+	name.setAttribute('id','upName');
+	fieldset.appendChild(document.createTextNode("Name")); //Label the text box
 	fieldset.appendChild(name);
-	fieldset.appendChild(document.createTextNode("Name"));
+
 	
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
-	reps.setAttribute('name','reps');
+	reps.setAttribute('id','upReps');
+	fieldset.appendChild(document.createTextNode("Reps")); //Label the text box
 	fieldset.appendChild(reps);
+	
+	var weight = document.createElement("input");
+	weight.setAttribute('type','text');
+	weight.setAttribute('id','upWeight');
+	fieldset.appendChild(document.createTextNode("Weight")); //Label the text box
+	fieldset.appendChild(weight);
+	
+	var date = document.createElement("input");
+	date.setAttribute('type','text');
+	date.setAttribute('id','upDate'); //punny
+	fieldset.appendChild(document.createTextNode("Date")); //Label the text box
+	fieldset.appendChild(date);
+	
+	var units = document.createElement("input");
+	units.setAttribute('type','radio');
+	units.setAttribute('id','upUnits'); //punny
+	fieldset.appendChild(document.createTextNode("Units")); //Label the text box
+	fieldset.appendChild(units);
 	//*******************************************************
 
 	upForm.appendChild(fieldset); //append the fieldset to the form	
