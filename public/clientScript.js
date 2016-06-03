@@ -161,11 +161,17 @@ function updateButton(id){
 	fieldset.appendChild(document.createTextNode("Date")); //Label the text box
 	fieldset.appendChild(date);
 	
-	var units = document.createElement("input");
-	units.setAttribute('type','radio');
-	units.setAttribute('id','upUnits'); //punny
-	fieldset.appendChild(document.createTextNode("Units")); //Label the text box
-	fieldset.appendChild(units);
+	var unitsLBS = document.createElement("input");
+	unitsLBS.setAttribute('type','radio');
+	unitsLBS.setAttribute('name','units');
+	var unitsKilos = document.createElement("input");
+	unitsKilos.setAttribute('type','radio');
+	unitsKilos.setAttribute('name','units');
+	fieldset.appendChild(document.createTextNode("Units")); //Label the radio buttons
+	fieldset.appendChild(unitsLBS);
+	fieldset.appendChild(document.createTextNode("lbs"));
+	fieldset.appendChild(unitsKilos);
+	fieldset.appendChild(document.createTextNode("kilos"));	
 	//*******************************************************
 
 	upForm.appendChild(fieldset); //append the fieldset to the form	
