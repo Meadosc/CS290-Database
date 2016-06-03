@@ -69,16 +69,16 @@ function createTable(data){
 	for(var i in data){
 		var row = document.createElement("tr");
 		var rowID = null;
+		var flag = 1; //Flag to make first column hidden (id column)
 		for(var j in data[i]){
 			var col = document.createElement("td");
 			col.textContent = data[i][j];
-			
-/*debug*/		//console.log("data[i][j]: " + data[i][j]);
-			//rowID = data[i][0];
-/*debug*/		//console.log("rowID: " + rowID);			
-			row.appendChild(col);
+			if(flag === 1){
+				col.style.visibility = "hidden"
+				flag = 0; //Set flag so this is only done on first column
+			}; //hide id column
+			row.appendChild(col); //add row to table
 		}
-		
 		//Add delete button
 		var btn = document.createElement("BUTTON");
 		var t = document.createTextNode("Delete");
