@@ -95,7 +95,7 @@ function createTable(data){
 		var upBtn = document.createElement("BUTTON");
 		var UpdateText = document.createTextNode("Update");
 		upBtn.appendChild(UpdateText);
-		upBtn.onclick = function(){updateButton()}; //Reference updateButton function
+		upBtn.onclick = function(btn.id){updateButton(btn.id)}; //Reference updateButton function
 		row.appendChild(upBtn);
 		
 		//add data + buttons to table
@@ -103,8 +103,9 @@ function createTable(data){
 	}
 };
 
-function deleteButton(){
-	console.log("deleteButton() function is running.")
+function deleteButton(id){
+	console.log("deleteButton() function is running.");
+	console.log("btn.id = " id);
 };
 
 function updateButton(){};
