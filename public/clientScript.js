@@ -56,7 +56,7 @@ function createTable(data){
 	document.body.appendChild(table); //Add the table as a child of the body in HTML
 
 	//Create table headers
-	var headers = ["id","name","reps","weight","date","lbs/kilos"];
+	var headers = ["","name","reps","weight","date","lbs/kilos"];
 	var row = document.createElement("tr"); 
 	table.appendChild(row); //Create a new row
 	for(var j in headers){
