@@ -141,7 +141,7 @@ function updateButton(id){
 	console.log("adding form");
 	
 	
-	//var table = document.getElementById("tableID"); //Get the table ID so I can put the form above it in the next line
-	document.insertBefore(upForm, document.body.childNodes[1]);
+	var table = document.getElementById("tableID"); //Get the table ID so I can put the form above it in the next line
+	document.insertBefore(upForm, document.body.childNodes[0]);
 	
 };
