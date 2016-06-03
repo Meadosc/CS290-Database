@@ -74,8 +74,8 @@ function createTable(data){
 			col.textContent = data[i][j];
 			
 /*debug*/		//console.log("data[i][j]: " + data[i][j]);
-			rowID = data[i][0];
-/*debug*/		console.log("rowID: " + rowID);			
+			//rowID = data[i][0];
+/*debug*/		//console.log("rowID: " + rowID);			
 			row.appendChild(col);
 		}
 		
@@ -83,9 +83,9 @@ function createTable(data){
 		var btn = document.createElement("BUTTON");
 		var t = document.createTextNode("Delete");
 		btn.appendChild(t);
-		btn.id = data[i][0];
+		btn.id = btn.parentNode.firstChild;
 
-/*debug*/	console.log("data[i][0]: " + data[i][0]);
+/*debug*/	//console.log("data[i][0]: " + data[i][0]);
 /*debug*/	console.log("button id: " + btn.id);
 		
 		btn.onclick = function(){deleteButton()};  //Reference deleteButton function to delete a row
