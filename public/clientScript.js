@@ -182,7 +182,7 @@ function updateButton(id){
 	
 	console.log("id from outside updateSubmitButton: " + id);
 	
-	updateSubmitButton.addEventListener("click", function (event, id){
+	updateSubmitButton.addEventListener("click", function (event){
 		console.log("id from inside updateSubmitButton: " + id);
 		updateGET(id);
 		event.preventDefault(); //Stop page from refreshing
