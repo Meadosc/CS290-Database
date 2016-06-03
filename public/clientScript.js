@@ -125,7 +125,7 @@ function deleteButton(id){
 function updateButton(id){
 	//Create form and set attributes*******************************
 	var upForm = document.createElement("form"); //create form element
-	//upForm.setAttribute("id", id); //Give the form the same ID as the data we are changing
+	upForm.setAttribute("id", "upForm" + id); //Give the form the same ID as the data we are changing
 	
 	//***********************************************************
 	
@@ -217,6 +217,7 @@ function updateGET(id){
 		//delete table and then insert new table
 		deleteTable(); //delete old table
 		callSelect(); //create new table
+		document.body.removeChild(document.getElementById("upForm" + id));
 	});
 	req.send(); //Send the content
 	event.preventDefault(); //Stop page from refreshing
