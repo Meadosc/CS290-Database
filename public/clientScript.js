@@ -137,11 +137,11 @@ function updateButton(id){
 	upForm.appendChild(reps);
 	//*******************************************************
 	
-	document.body.appendChild(upForm); //Add the form to the document
+	//document.body.appendChild(upForm); //Add the form to the document
 	console.log("adding form");
 	
 	
-	//var table = document.getElementById("tableID"); //Get the table ID so I can put the form above it in the next line
-	//table.insertBefore(upForm, table);
+	var table = document.getElementById("tableID"); //Get the table ID so I can put the form above it in the next line
+	table.insertBefore(upForm, table);
 	
 };
