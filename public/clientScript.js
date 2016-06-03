@@ -139,12 +139,12 @@ function updateButton(id){
 	var name = document.createElement("input");
 	name.setAttribute('type','text');
 	name.setAttribute('name','name');
-	upForm.fieldset.appendChild(name);
+	fieldset.appendChild(name);
 	
 	var reps = document.createElement("input");
 	reps.setAttribute('type','text');
 	reps.setAttribute('name','reps');
-	upForm.fieldset.appendChild(reps);
+	fieldset.appendChild(reps);
 	//*******************************************************
 
 	upForm.appendChild(fieldset); //append the fieldset to the form	
