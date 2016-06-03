@@ -121,12 +121,8 @@ function deleteButton(id){
 	event.preventDefault(); //Stop page from refreshing
 };
 
-function updateButton(id){
-	updateForm(id);
-	
-};
 
-function updateForm(id){
+function updateButton(id){
 	//Create form and set attributes*******************************
 	var upForm = document.createElement("form"); //create form element
 	upForm.setAttribute("id", id); //Give the form the same ID as the data we are changing
@@ -179,7 +175,23 @@ function updateForm(id){
 	fieldset.appendChild(document.createTextNode("kilos"));	
 	//*******************************************************
 
+	//Create submit button************************************
+	updateSubmitButton = document.createElement("BUTTON");
+	theText = document.createTextNode("Update");
+	updateSubmitButton.appendChild(theText);
+	updateSubmitButton.onclick=updateGET(id); //Reference the function that will do a get request to the update page
+	
+	fieldset.appendChild(updateSubmitButton);
+	//*******************************************************
+
 	upForm.appendChild(fieldset); //append the fieldset to the form	
 	var table = document.getElementById("tableID"); //Get the table ID so I can put the form above it in the next line
-	document.body.insertBefore(upForm, table);	
+	document.body.insertBefore(upForm, table);
+	
+	
+};
+
+function updateGET(id){
+	
+	
 };
