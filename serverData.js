@@ -59,8 +59,8 @@ app.get('/updateForm',function(req,res,next){
     if(result.length == 1){
       var curVals = result[0];
       res.render('updateForm',context);
-    });
-  }
+    }
+  });
 });
 
 //Update data in the database
