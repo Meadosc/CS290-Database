@@ -132,7 +132,7 @@ function updateButton(id){
 	var legend = document.createElement("legend");
 	legend.setAttribute('textContent','Update the workout');
 	fieldset.appendChild(legend);
-	upForm.appendChild(fieldset);
+
 	//********************************************************
 	
 	//Below are the input text boxes of the form**************
@@ -147,7 +147,7 @@ function updateButton(id){
 	upForm.fieldset.appendChild(reps);
 	//*******************************************************
 
-	
+	upForm.appendChild(fieldset); //append the fieldset to the form	
 	var table = document.getElementById("tableID"); //Get the table ID so I can put the form above it in the next line
 	document.body.insertBefore(upForm, table);
 	
