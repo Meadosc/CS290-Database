@@ -179,8 +179,11 @@ function updateButton(id){
 	updateSubmitButton = document.createElement("BUTTON");
 	theText = document.createTextNode("Update");
 	updateSubmitButton.appendChild(theText);
+	
+	console.log("id from outside updateSubmitButton: " + id);
+	
 	updateSubmitButton.addEventListener("click", function (event, id){
-		console.log("id from updateSubmitButton: " + id);
+		console.log("id from inside updateSubmitButton: " + id);
 		updateGET(id);
 		event.preventDefault(); //Stop page from refreshing
 	}); //Reference the function that will do a get request to the update page
@@ -196,7 +199,6 @@ function updateButton(id){
 };
 
 function updateGET(id){
-	console.log("updateGET function was called successfully");
-	console.log("id = " + id);
+	console.log("id from inside updateGET: " + id);
 	
 };
