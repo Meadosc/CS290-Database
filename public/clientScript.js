@@ -180,6 +180,7 @@ function updateButton(id){
 	theText = document.createTextNode("Update");
 	updateSubmitButton.appendChild(theText);
 	updateSubmitButton.addEventListener("click", function (event, id){
+		console.log("id from updateSubmitButton: " + id);
 		updateGET(id);
 		event.preventDefault(); //Stop page from refreshing
 	}); //Reference the function that will do a get request to the update page
