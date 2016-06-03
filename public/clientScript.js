@@ -103,6 +103,8 @@ function createTable(data){
 	}
 };
 
-function deleteButton(){};
+function deleteButton(){
+	console.log("deleteButton() function is running.")
+};
 
 function updateButton(){};
